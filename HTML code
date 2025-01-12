@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOV.UK - Government Services and Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2f1;
+        }
+        header {
+            background-color: #005ea5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+        .top-buttons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .top-buttons button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .top-buttons button:hover {
+            background-color: darkred;
+        }
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .auth-buttons .sign-in {
+            background-color: white;
+            color: #005ea5;
+            border: 2px solid #005ea5;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            line-height: 45px;
+        }
+        .auth-buttons .sign-in:hover {
+            background-color: #005ea5;
+            color: white;
+        }
+        .auth-buttons .accessibility {
+            background-color: yellow;
+            color: black;
+            border: none;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            cursor: pointer;
+        }
+        .auth-buttons .accessibility:hover {
+            background-color: #e5c700;
+        }
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+        }
+        .middle-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px auto;
+            padding: 10px 0;
+        }
+        .middle-buttons button {
+            background-color: #007f3b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .middle-buttons button:hover {
+            background-color: #005f2c;
+        }
+        .welcome-section {
+            text-align: left;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .welcome-section h2 {
+            font-size: 2.5rem; /* Increased font size by +2 */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .welcome-section a {
+            display: block;
+            text-decoration: underline;
+            color: #005ea5;
+            font-size: 1.5rem; /* Increased font size by +6 */
+            margin-bottom: 10px;
+        }
+        .welcome-section a:hover {
+            text-decoration: none;
+        }
+        footer {
+            background-color: #f3f2f1;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+        footer a {
+            color: #005ea5;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .login-form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #005ea5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-buttons">
+            <button onclick="history.back()">Undo</button>
+            <button onclick="history.forward()">Redo</button>
+        </div>
+        <div class="auth-buttons">
+            <button class="accessibility" onclick="alert('Accessibility options')">Accessibility</button>
+            <button class="sign-in" onclick="toggleLoginForm()">Sign In</button>
+        </div>
+        <h1>GOV.UK</h1>
+        <p>The best place to find government services and information</p>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+
+    <div class="middle-buttons">
+        <button onclick="window.location.href='https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency'">DVLA</button>
+        <button onclick="window.location.href='https://www.metoffice.gov.uk/'">MET Office</button>
+        <button onclick="window.location.href='https://www.gov.uk/government/organisations/hm-revenue-customs'">HMRC</button>
+        <button onclick="window.location.href='https://www.gov.uk/government/organisations/environment-agency'">Envi Agency</button>
+    </div>
+
+    <div class="welcome-section">
+        <h2>Welcome Deshara Weerakoon</h2>
+        <a href="#">-Your Latest Tax Returns & Filings</a>
+        <a href="#">-DVLA T&C Updates</a>
+        <a href="#">-Worcester City Council updates & alerts</a>
+    </div>
+
+    <div id="login-container" style="display:none;">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <form action="register.php" method="post" style="margin-top: 10px;">
+                <div>
+                    <label for="new-username">New Username:</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                </div>
+                <div>
+                    <label for="new-password">New Password:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+                <div>
+                    <button type="submit">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Crown copyright</p>
+        <a href="#">Accessibility Statement</a> | 
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Cookies</a>
+    </footer>
+
+    <script>
+        function toggleLoginForm() {
+            var loginContainer = document.getElementById('login-container');
+            if (loginContainer.style.display === 'none' || loginContainer.style.display === '') {
+                loginContainer.style.display = 'block';
+            } else {
+                loginContainer.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
